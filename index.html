@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudVault - Secure Cloud Storage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">CloudVault</div>
+        
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
 
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search files...">
+        </div>
+
+        <div class="login-container">
+            <button class="login-btn" id="loginBtn">Login</button>
+            <div class="login-dropdown" id="loginDropdown">
+                <div class="login-option" onclick="loginWith('google')">
+                    <span class="login-icon">🔍</span>
+                    <span>Login with Google</span>
+                </div>
+                <div class="login-option" onclick="loginWith('email')">
+                    <span class="login-icon">📧</span>
+                    <span>Login with Email</span>
+                </div>
+                <div class="login-option" onclick="loginWith('phone')">
+                    <span class="login-icon">📱</span>
+                    <span>Login with Phone</span>
+                </div>
+                <div class="login-option" onclick="loginWith('username')">
+                    <span class="login-icon">👤</span>
+                    <span>Login with Username</span>
+                </div>
+                <div class="login-option" id="faceLoginBtn">
+                    <span class="login-icon">📷</span>
+                    <span>Face Recognition</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Secure Cloud Storage</h1>
+        <p>Store, share, and access your files from anywhere with advanced AI-powered security</p>
+        <button class="upload-btn" onclick="uploadFile()">
+            📤 Upload Files
+        </button>
+        <div class="access-link">
+            <a href="files.html">Access Your Files →</a>
+        </div>
+    </section>
+
+    <!-- Face Recognition Modal -->
+    <div class="modal" id="faceModal">
+        <div class="modal-content">
+            <h2>Face Recognition Login</h2>
+            <video id="video" autoplay></video>
+            <canvas id="canvas" style="display: none;"></canvas>
+            <div class="modal-buttons">
+                <button class="modal-btn capture-btn" id="captureBtn">Capture & Authenticate</button>
+                <button class="modal-btn close-btn" id="closeModal">Cancel</button>
+            </div>
+            <div id="statusMessage"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
